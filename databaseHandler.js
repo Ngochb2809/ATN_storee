@@ -8,11 +8,11 @@ async function insertToy(newToy) {
     let newId = await db.collection("toys").insertOne(newToy)
     return newId
 }
-async function updateToy(id, name, price, picture, year, quantity) {
+async function updateToy(id, name, price, pictureURL, year, quantity, color) {
     let client = await MongoClient.connect(url)
     let db = client.db("GCH1002")
     await db.collection("toys").updateOne({ _id: ObjectId(id) },
-        { $set: { "name": name, "price": price, "pictureURL": pictureURL , "year" : year, "quantity" : quantity} })
+        { $set: { "name": name, "price": price, "pictureURL": pictureURL , "year" : year, "quantity" : quantity,"color" : color} })
 }
 async function getAllToys() {
     let client = await MongoClient.connect(url)

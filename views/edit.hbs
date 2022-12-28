@@ -20,9 +20,13 @@
                 <label class="h3 text-secondary">Picture URL</label><input type="text" name="txtPic" value="{{toy.pictureURL}}"class="form-control" required ></div>
             <div class="form-group">
                 <label class="h3 text-secondary">Year</label><input type="text" name="txtYear" value="{{toy.year}}" class="form-control" required></div>
-            <div class="form-group">
                 <label class="h3 text-secondary">Quantity</label><input type="text" name="txtQuantity" value="{{toy.quantity}}" class="form-control" required><label style="color: red;">{{results.quantityError}}</label></div>
-        <input type="submit" value="Update Product" style="color: orangestyle="color: rgb(0, 255, 238);;">
+            <div class="form-group">
+                <label class="h3 text-secondary">Color</label><input type="text" name="txtColor" value="{{toy.color}}" class="form-control" required></div>    
+            <div class="form-group">    
+             <div class="form-group">
+                <input type="submit" class="btn btn-primary mt-3" value="Edit"style="background-color: yellow;"></div> 
+        </div>  
     </form>
 </body>
 </html>

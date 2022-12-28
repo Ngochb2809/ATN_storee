@@ -17,12 +17,14 @@ app.post('/new',async (req,res)=>{
     let picture = req.body.txtPic
     let year = req.body.txtYear
     let quantity = req.body.txtQuantity
+    let color = req.body.txtColor
     let newToy = {
         name : name,
         price: Number.parseInt(price) ,
         pictureURL: picture,
         year : Number.parseInt(year),
         quantity : Number.parseInt(quantity),
+        color : color
     }; 
     if(isNaN(quantity))
     {
@@ -63,9 +65,10 @@ app.post('/edit',async (req,res)=>{
     const id = req.body.id
     const name = req.body.txtName
     const price = req.body.txtPrice
-    const picture = req.body.txtPic
+    const pictureURL = req.body.txtPic
     const year = req.body.txtYear
     const quantity = req.body.txtQuantity
+    const color = req.body.txtColor
     // if(isNaN(quantity))
     // {
     //    let modelError={
@@ -86,7 +89,7 @@ app.post('/edit',async (req,res)=>{
     //        res.render('edit',{results:modelError});
     // } 
     // else {
-    await updateToy(id, name, price, picture, year, quantity)
+    await updateToy(id, name, price, pictureURL, year, quantity, color)
     res.redirect('/view')
     //}
 })
