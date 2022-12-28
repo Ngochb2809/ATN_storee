@@ -13,15 +13,15 @@
     <form class="card p-3 bg-light text-center mt-3 mb-3" action="/edit" method="post">
     <input type="hidden" name="id" value="{{toy._id}}">
             <div class="form-group">
-                <label class="h3 text-secondary">Name</label> <input type="text" name="txtName" value="{{toy.name}}" class="form-control" required></div>
+                <label class="h3 text-secondary">Name</label> <input type="text" name="txtName" value="{{toy.name}}" class="form-control" required><label style="color: red;">{{results.nameError}}</label></div>
             <div class="form-group">
-                <label class="h3 text-secondary">Price</label><input type="text" name="txtPrice" value="{{toy.price}}" class="form-control" required></div>
+                <label class="h3 text-secondary">Price</label><input type="text" name="txtPrice" value="{{toy.price}}" class="form-control" required $><label style="color: red;">{{results.priceError}}</label></div>
             <div class="form-group">
                 <label class="h3 text-secondary">Picture URL</label><input type="text" name="txtPic" value="{{toy.picture}}"class="form-control" required ></div>
             <div class="form-group">
                 <label class="h3 text-secondary">Year</label><input type="text" name="txtYear" value="{{toy.year}}" class="form-control" required></div>
             <div class="form-group">
-                <label class="h3 text-secondary">Quantity</label><input type="text" name="txtQuantity" value="{{toy.quantity}}" class="form-control" required></div>
+                <label class="h3 text-secondary">Quantity</label><input type="text" name="txtQuantity" value="{{toy.quantity}}" class="form-control" required><label style="color: red;">{{results.quantityError}}</label></div>
         <input type="submit" value="Update Product" style="color: orange;">
     </form>
 </body>
