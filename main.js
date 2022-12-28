@@ -66,29 +66,29 @@ app.post('/edit',async (req,res)=>{
     const picture = req.body.txtPic
     let year = req.body.txtYear
     let quantity = req.body.txtQuantity
-    if(isNaN(quantity))
-    {
-       let modelError={
-        quantityError:"Please enter a number",
-       };
-       res.render('newToy',{results:modelError});
-    }
-    else if(name.trim().length > 20 ) {
-        let modelError={
-            nameError:"Name was too long",
-           };
-           res.render('newToy',{results:modelError});
-    } 
-    else if(isNaN(price)){
-        let modelError={
-            priceError:"Please enter a number",
-           };
-           res.render('newToy',{results:modelError});
-    } 
-    else {
+    // if(isNaN(quantity))
+    // {
+    //    let modelError={
+    //     quantityError:"Please enter a number",
+    //    };
+    //    res.render('id',{results:modelError});
+    // }
+    // else if(name.trim().length > 20 ) {
+    //     let modelError={
+    //         nameError:"Name was too long",
+    //        };
+    //        res.render('edit',{results:modelError});
+    // } 
+    // else if(isNaN(price)){
+    //     let modelError={
+    //         priceError:"Please enter a number",
+    //        };
+    //        res.render('edit',{results:modelError});
+    // } 
+    // else {
     await updateToy(id, name, price, picture, year, quantity)
     res.redirect('/view')
-    }
+    //}
 })
 
 app.get('/edit',async (req,res)=>{
