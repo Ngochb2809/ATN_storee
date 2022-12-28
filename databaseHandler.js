@@ -12,7 +12,7 @@ async function updateToy(id, name, price, picture, year, quantity) {
     let client = await MongoClient.connect(url)
     let db = client.db("GCH1002")
     await db.collection("toys").updateOne({ _id: ObjectId(id) },
-        { $set: { "name": name, "price": price, "pictureURL": picture , "year" : year, "quantity" : quantity} })
+        { $set: { "name": name, "price": price, "pictureURL": pictureURL , "year" : year, "quantity" : quantity} })
 }
 async function getAllToys() {
     let client = await MongoClient.connect(url)

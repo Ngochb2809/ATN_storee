@@ -39,10 +39,10 @@ app.post('/new',async (req,res)=>{
     } 
     else if(isNaN(price)){
         let modelError={
-            priceError:"Please enter a number",
+            priceError:"Please enter a number or it too much",
            };
            res.render('newToy',{results:modelError});
-    } 
+    }
     else {
     let newId = await insertToy(newToy)
     console.log(newId.insertedId)
@@ -64,8 +64,8 @@ app.post('/edit',async (req,res)=>{
     const name = req.body.txtName
     const price = req.body.txtPrice
     const picture = req.body.txtPic
-    let year = req.body.txtYear
-    let quantity = req.body.txtQuantity
+    const year = req.body.txtYear
+    const quantity = req.body.txtQuantity
     // if(isNaN(quantity))
     // {
     //    let modelError={
